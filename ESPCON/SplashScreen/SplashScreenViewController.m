@@ -20,6 +20,8 @@
     bool isAuthorized = true;
     if (isAuthorized) {
         [self performSegueWithIdentifier:@"mainSegue" sender:nil];
+    } else {
+        [self performSegueWithIdentifier:@"authSegue" sender:nil];
     }
 }
 

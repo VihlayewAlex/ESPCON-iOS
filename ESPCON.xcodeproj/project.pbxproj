@@ -19,6 +19,10 @@
 		3A7FBB141F79B88C00E6F0FB /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A7FBB131F79B88C00E6F0FB /* Auth.storyboard */; };
 		3A7FBB2A1F7A304E00E6F0FB /* CoreBluetoothService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FBB291F7A304E00E6F0FB /* CoreBluetoothService.m */; };
 		3A7FBB2F1F7A40A900E6F0FB /* NetworkingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FBB2E1F7A40A900E6F0FB /* NetworkingService.m */; };
+		3AB017161F7C65540010EE46 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB017151F7C65540010EE46 /* SignUpViewController.m */; };
+		3AB0171A1F7C657F0010EE46 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB017191F7C657F0010EE46 /* SignInViewController.m */; };
+		3AB0171F1F7C6A420010EE46 /* KeyboardDismissingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB0171D1F7C6A3E0010EE46 /* KeyboardDismissingView.swift */; };
+		3AB017201F7C6A420010EE46 /* KeyboardAvoiding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB0171E1F7C6A3F0010EE46 /* KeyboardAvoiding.swift */; };
 		3AED02861F7A43160072D788 /* SplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AED02851F7A43160072D788 /* SplashScreenViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +47,13 @@
 		3A7FBB291F7A304E00E6F0FB /* CoreBluetoothService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreBluetoothService.m; sourceTree = "<group>"; };
 		3A7FBB2D1F7A40A900E6F0FB /* NetworkingService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkingService.h; sourceTree = "<group>"; };
 		3A7FBB2E1F7A40A900E6F0FB /* NetworkingService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkingService.m; sourceTree = "<group>"; };
+		3AB017141F7C65540010EE46 /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		3AB017151F7C65540010EE46 /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		3AB017181F7C657F0010EE46 /* SignInViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
+		3AB017191F7C657F0010EE46 /* SignInViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
+		3AB0171C1F7C6A3A0010EE46 /* ESPCON-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ESPCON-Bridging-Header.h"; sourceTree = "<group>"; };
+		3AB0171D1F7C6A3E0010EE46 /* KeyboardDismissingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismissingView.swift; sourceTree = "<group>"; };
+		3AB0171E1F7C6A3F0010EE46 /* KeyboardAvoiding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAvoiding.swift; sourceTree = "<group>"; };
 		3AED02841F7A43160072D788 /* SplashScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SplashScreenViewController.h; sourceTree = "<group>"; };
 		3AED02851F7A43160072D788 /* SplashScreenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SplashScreenViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,19 +89,23 @@
 			isa = PBXGroup;
 			children = (
 				3AED02871F7A431A0072D788 /* SplashScreen */,
+				3AB017171F7C655A0010EE46 /* SignUpViewController */,
+				3AB0171B1F7C65850010EE46 /* SignInViewController */,
 				3A7FBB0F1F79B1B100E6F0FB /* AddDevice */,
 				3A7FBB0B1F79A7CA00E6F0FB /* Devices */,
 				3A7FBB0A1F79A78400E6F0FB /* AppDelegate */,
 				3A7FBB091F79A72800E6F0FB /* EmptyDataSet */,
+				3AB017211F7C6A4D0010EE46 /* KeyboardAvoiding */,
+				3A1690211F78675F00D26755 /* LaunchScreen.storyboard */,
 				3A7FBB131F79B88C00E6F0FB /* Auth.storyboard */,
 				3A1690191F78675F00D26755 /* Main.storyboard */,
 				3A16901F1F78675F00D26755 /* Assets.xcassets */,
-				3A1690211F78675F00D26755 /* LaunchScreen.storyboard */,
 				3A1690241F78675F00D26755 /* Info.plist */,
 				3A1690251F78675F00D26755 /* main.m */,
 				3A16901C1F78675F00D26755 /* ESPCON.xcdatamodeld */,
 				3A7FBB2C1F7A407C00E6F0FB /* NetworkingService */,
 				3A7FBB2B1F7A305300E6F0FB /* CoreBluetoothService */,
+				3AB0171C1F7C6A3A0010EE46 /* ESPCON-Bridging-Header.h */,
 			);
 			path = ESPCON;
 			sourceTree = "<group>";
@@ -149,6 +164,33 @@
 			path = NetworkingService;
 			sourceTree = "<group>";
 		};
+		3AB017171F7C655A0010EE46 /* SignUpViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3AB017141F7C65540010EE46 /* SignUpViewController.h */,
+				3AB017151F7C65540010EE46 /* SignUpViewController.m */,
+			);
+			path = SignUpViewController;
+			sourceTree = "<group>";
+		};
+		3AB0171B1F7C65850010EE46 /* SignInViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3AB017181F7C657F0010EE46 /* SignInViewController.h */,
+				3AB017191F7C657F0010EE46 /* SignInViewController.m */,
+			);
+			path = SignInViewController;
+			sourceTree = "<group>";
+		};
+		3AB017211F7C6A4D0010EE46 /* KeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				3AB0171E1F7C6A3F0010EE46 /* KeyboardAvoiding.swift */,
+				3AB0171D1F7C6A3E0010EE46 /* KeyboardDismissingView.swift */,
+			);
+			path = KeyboardAvoiding;
+			sourceTree = "<group>";
+		};
 		3AED02871F7A431A0072D788 /* SplashScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +231,7 @@
 				TargetAttributes = {
 					3A16900F1F78675F00D26755 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -234,10 +277,14 @@
 				3A1690261F78675F00D26755 /* main.m in Sources */,
 				3AED02861F7A43160072D788 /* SplashScreenViewController.m in Sources */,
 				3A7FBB121F79B1C400E6F0FB /* AddDeviceViewController.m in Sources */,
+				3AB0171A1F7C657F0010EE46 /* SignInViewController.m in Sources */,
+				3AB0171F1F7C6A420010EE46 /* KeyboardDismissingView.swift in Sources */,
+				3AB017201F7C6A420010EE46 /* KeyboardAvoiding.swift in Sources */,
 				3A1690151F78675F00D26755 /* AppDelegate.m in Sources */,
 				3A7FBB2A1F7A304E00E6F0FB /* CoreBluetoothService.m in Sources */,
 				3A7FBB0E1F79A82200E6F0FB /* DevicesViewController.m in Sources */,
 				3A7FBB081F79A72100E6F0FB /* UIScrollView+EmptyDataSet.m in Sources */,
+				3AB017161F7C65540010EE46 /* SignUpViewController.m in Sources */,
 				3A7FBB2F1F7A40A900E6F0FB /* NetworkingService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,7 +359,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -361,7 +408,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -372,12 +419,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 22U234HGU8;
 				INFOPLIST_FILE = ESPCON/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vihlayew.ESPCON;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ESPCON/ESPCON-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -386,12 +438,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 22U234HGU8;
 				INFOPLIST_FILE = ESPCON/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vihlayew.ESPCON;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ESPCON/ESPCON-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

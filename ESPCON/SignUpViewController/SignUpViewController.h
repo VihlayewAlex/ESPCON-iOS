@@ -1,14 +1,14 @@
 //
-//  AddDeviceViewController.h
+//  SignUpViewController.h
 //  ESPCON
 //
-//  Created by Alex Vihlayew on 26/09/2017.
+//  Created by Alex Vihlayew on 9/28/17.
 //  Copyright © 2017 Alex Vihlayew. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "ESPCON-Swift.h"
 
-@interface AddDeviceViewController : UIViewController
+@interface SignUpViewController : UIViewController
 
 @end

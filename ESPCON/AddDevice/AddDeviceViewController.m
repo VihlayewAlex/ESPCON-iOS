@@ -10,6 +10,7 @@
 
 @interface AddDeviceViewController ()
 
+@property (weak, nonatomic) IBOutlet UIStackView *contentStackView;
 @property (weak, nonatomic) IBOutlet UITextField *ssidNameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 @property (weak, nonatomic) IBOutlet UITextField *confirmPasswordField;
@@ -22,7 +23,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [KeyboardAvoiding setAvoidingView:_contentStackView];
 }
 
 #pragma mark Actions

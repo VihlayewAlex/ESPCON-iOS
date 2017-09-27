@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +13,7 @@
         <!--Devices-->
         <scene sceneID="AeT-OM-EJN">
             <objects>
-                <viewController id="6FP-kx-fVV" customClass="DevicesViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="6FP-kx-fVV" customClass="DevicesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rlY-bp-9zA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,126 +49,111 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xen-pL-hmb">
-                                <rect key="frame" x="16" y="80" width="288" height="40"/>
-                                <color key="backgroundColor" red="0.33090013270000002" green="0.43333035710000001" blue="0.52895086999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="RBy-Pa-dnE"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                <state key="normal" title="Scan new device">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="scanNewDevice:" destination="izS-xu-Kkh" eventType="touchUpInside" id="aaj-o0-hMD"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SpU-H1-eiw">
-                                <rect key="frame" x="16" y="366" width="288" height="40"/>
-                                <color key="backgroundColor" red="0.33090013270000002" green="0.43333035710000001" blue="0.52895086999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="M73-Ij-3pb"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                <state key="normal" title="Save to board">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="saveToBoard:" destination="izS-xu-Kkh" eventType="touchUpInside" id="sGt-ru-t6b"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="SSID name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ien-Gc-fyx">
-                                <rect key="frame" x="16" y="136" width="288" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wFb-N7-HhA">
-                                <rect key="frame" x="16" y="182" width="288" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tjL-D4-VHz">
-                                <rect key="frame" x="16" y="228" width="288" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Device name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iVd-fh-VHu">
-                                <rect key="frame" x="16" y="274" width="288" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Device ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yBr-gF-29c">
-                                <rect key="frame" x="16" y="320" width="288" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z97-9e-Nxz">
-                                <rect key="frame" x="16" y="422" width="288" height="40"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="ByF-b2-T6l"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                <state key="normal" title="Sign out">
-                                    <color key="titleColor" red="0.33090013270000002" green="0.43333035710000001" blue="0.52895086999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="signOut:" destination="izS-xu-Kkh" eventType="touchUpInside" id="cEk-5u-E16"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="A61-Jv-zhk">
+                                <rect key="frame" x="8" y="72" width="304" height="382"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xen-pL-hmb">
+                                        <rect key="frame" x="0.0" y="0.0" width="304" height="40"/>
+                                        <color key="backgroundColor" red="0.33090013270000002" green="0.43333035710000001" blue="0.52895086999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="RBy-Pa-dnE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <state key="normal" title="Scan new device">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="scanNewDevice:" destination="izS-xu-Kkh" eventType="touchUpInside" id="aaj-o0-hMD"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="SSID name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ien-Gc-fyx">
+                                        <rect key="frame" x="0.0" y="56" width="304" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wFb-N7-HhA">
+                                        <rect key="frame" x="0.0" y="102" width="304" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tjL-D4-VHz">
+                                        <rect key="frame" x="0.0" y="148" width="304" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Device name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iVd-fh-VHu">
+                                        <rect key="frame" x="0.0" y="194" width="304" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Device ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yBr-gF-29c">
+                                        <rect key="frame" x="0.0" y="240" width="304" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SpU-H1-eiw">
+                                        <rect key="frame" x="0.0" y="286" width="304" height="40"/>
+                                        <color key="backgroundColor" red="0.33090013270000002" green="0.43333035710000001" blue="0.52895086999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="M73-Ij-3pb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <state key="normal" title="Save to board">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="saveToBoard:" destination="izS-xu-Kkh" eventType="touchUpInside" id="sGt-ru-t6b"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z97-9e-Nxz">
+                                        <rect key="frame" x="0.0" y="342" width="304" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="ByF-b2-T6l"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <state key="normal" title="Sign out">
+                                            <color key="titleColor" red="0.33090013270000002" green="0.43333035710000001" blue="0.52895086999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="signOut:" destination="izS-xu-Kkh" eventType="touchUpInside" id="cEk-5u-E16"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="d98-Tu-UqD" firstAttribute="trailing" secondItem="ien-Gc-fyx" secondAttribute="trailing" constant="16" id="0nM-sc-6b4"/>
-                            <constraint firstItem="tjL-D4-VHz" firstAttribute="top" secondItem="wFb-N7-HhA" secondAttribute="bottom" constant="16" id="10P-v6-RIS"/>
-                            <constraint firstItem="SpU-H1-eiw" firstAttribute="leading" secondItem="d98-Tu-UqD" secondAttribute="leading" constant="16" id="3G6-PX-Jor"/>
-                            <constraint firstItem="xen-pL-hmb" firstAttribute="leading" secondItem="d98-Tu-UqD" secondAttribute="leading" constant="16" id="6T5-IF-jLO"/>
-                            <constraint firstItem="tjL-D4-VHz" firstAttribute="leading" secondItem="d98-Tu-UqD" secondAttribute="leading" constant="16" id="8JK-96-6U7"/>
-                            <constraint firstItem="iVd-fh-VHu" firstAttribute="leading" secondItem="d98-Tu-UqD" secondAttribute="leading" constant="16" id="Cgq-Lx-80w"/>
-                            <constraint firstItem="yBr-gF-29c" firstAttribute="leading" secondItem="d98-Tu-UqD" secondAttribute="leading" constant="16" id="Hmh-Nj-5Je"/>
-                            <constraint firstItem="wFb-N7-HhA" firstAttribute="top" secondItem="ien-Gc-fyx" secondAttribute="bottom" constant="16" id="Jyw-Gn-80H"/>
-                            <constraint firstItem="d98-Tu-UqD" firstAttribute="trailing" secondItem="xen-pL-hmb" secondAttribute="trailing" constant="16" id="KUI-SF-Uvu"/>
-                            <constraint firstItem="d98-Tu-UqD" firstAttribute="trailing" secondItem="z97-9e-Nxz" secondAttribute="trailing" constant="16" id="NtA-Uy-kRt"/>
-                            <constraint firstItem="SpU-H1-eiw" firstAttribute="top" secondItem="yBr-gF-29c" secondAttribute="bottom" constant="16" id="SpS-xS-Xs0"/>
-                            <constraint firstItem="z97-9e-Nxz" firstAttribute="leading" secondItem="d98-Tu-UqD" secondAttribute="leading" constant="16" id="Ulg-pg-id3"/>
-                            <constraint firstItem="d98-Tu-UqD" firstAttribute="trailing" secondItem="tjL-D4-VHz" secondAttribute="trailing" constant="16" id="VYn-eU-tqz"/>
-                            <constraint firstItem="iVd-fh-VHu" firstAttribute="top" secondItem="tjL-D4-VHz" secondAttribute="bottom" constant="16" id="WSw-be-Myj"/>
-                            <constraint firstItem="ien-Gc-fyx" firstAttribute="top" secondItem="xen-pL-hmb" secondAttribute="bottom" constant="16" id="aDF-cc-D50"/>
-                            <constraint firstItem="wFb-N7-HhA" firstAttribute="leading" secondItem="d98-Tu-UqD" secondAttribute="leading" constant="16" id="dDr-KV-3DX"/>
-                            <constraint firstItem="z97-9e-Nxz" firstAttribute="top" secondItem="SpU-H1-eiw" secondAttribute="bottom" constant="16" id="eQX-E1-jJr"/>
-                            <constraint firstItem="d98-Tu-UqD" firstAttribute="trailing" secondItem="SpU-H1-eiw" secondAttribute="trailing" constant="16" id="mFb-bH-Gbs"/>
-                            <constraint firstItem="d98-Tu-UqD" firstAttribute="trailing" secondItem="wFb-N7-HhA" secondAttribute="trailing" constant="16" id="nei-3d-NWu"/>
-                            <constraint firstItem="xen-pL-hmb" firstAttribute="top" secondItem="d98-Tu-UqD" secondAttribute="top" constant="16" id="oH2-HT-yYi"/>
-                            <constraint firstItem="d98-Tu-UqD" firstAttribute="trailing" secondItem="iVd-fh-VHu" secondAttribute="trailing" constant="16" id="pVF-N7-3Xn"/>
-                            <constraint firstItem="ien-Gc-fyx" firstAttribute="leading" secondItem="d98-Tu-UqD" secondAttribute="leading" constant="16" id="pap-RC-cLC"/>
-                            <constraint firstItem="d98-Tu-UqD" firstAttribute="trailing" secondItem="yBr-gF-29c" secondAttribute="trailing" constant="16" id="rin-k4-Kwa"/>
-                            <constraint firstItem="yBr-gF-29c" firstAttribute="top" secondItem="iVd-fh-VHu" secondAttribute="bottom" constant="16" id="zOw-cW-hT7"/>
+                            <constraint firstItem="A61-Jv-zhk" firstAttribute="leading" secondItem="d98-Tu-UqD" secondAttribute="leading" constant="8" id="6un-g0-GRV"/>
+                            <constraint firstItem="d98-Tu-UqD" firstAttribute="trailing" secondItem="A61-Jv-zhk" secondAttribute="trailing" constant="8" id="dFZ-La-9We"/>
+                            <constraint firstItem="A61-Jv-zhk" firstAttribute="top" secondItem="d98-Tu-UqD" secondAttribute="top" constant="8" id="lZ1-O1-psm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="d98-Tu-UqD"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add device" id="QIl-ta-Kyf"/>
                     <connections>
                         <outlet property="confirmPasswordField" destination="tjL-D4-VHz" id="nWi-Yb-udx"/>
+                        <outlet property="contentStackView" destination="A61-Jv-zhk" id="G0y-W2-bWt"/>
                         <outlet property="deviceIDField" destination="yBr-gF-29c" id="atu-dC-MFI"/>
                         <outlet property="deviceNameField" destination="iVd-fh-VHu" id="VqH-YY-Y4c"/>
                         <outlet property="passwordField" destination="wFb-N7-HhA" id="yZ0-0b-CxG"/>
@@ -184,6 +170,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Zxf-eD-vHT" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RAw-Cs-qiI">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="selectedImageTintColor" red="0.33090013270000002" green="0.43333035710000001" blue="0.52895086999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
