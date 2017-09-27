@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yDm-5c-kki">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash Screen View Controller-->
+        <scene sceneID="mIE-h9-c7p">
+            <objects>
+                <viewController id="yDm-5c-kki" customClass="SplashScreenViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="egG-4S-K4S">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.33090013270000002" green="0.43333035710000001" blue="0.52895086999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="cbL-OL-efw"/>
+                    </view>
+                    <connections>
+                        <segue destination="v7H-0i-y7R" kind="show" identifier="authSegue" id="P8Q-GO-uc8"/>
+                        <segue destination="mBW-fc-b0k" kind="show" identifier="mainSegue" id="GGD-Hh-Urp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BFQ-Ie-UzI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-54" y="17"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hd4-Lk-Acm">
+            <objects>
+                <viewController id="v7H-0i-y7R" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M4F-O0-HbU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hbO-8N-gM5">
+                                <rect key="frame" x="8" y="224" width="304" height="140"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5EI-V6-rqB">
+                                        <rect key="frame" x="0.0" y="0.0" width="304" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="noP-W5-ePQ">
+                                        <rect key="frame" x="0.0" y="50" width="304" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znp-iD-sn8">
+                                        <rect key="frame" x="0.0" y="100" width="304" height="40"/>
+                                        <color key="backgroundColor" red="0.33090013270000002" green="0.43333035710000001" blue="0.52895086999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="F44-Ls-0ZV"/>
+                                        </constraints>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="5EI-V6-rqB" firstAttribute="leading" secondItem="hbO-8N-gM5" secondAttribute="leading" id="FMI-sS-gqH"/>
+                                    <constraint firstItem="znp-iD-sn8" firstAttribute="leading" secondItem="hbO-8N-gM5" secondAttribute="leading" id="TH5-nr-KfW"/>
+                                    <constraint firstAttribute="trailing" secondItem="znp-iD-sn8" secondAttribute="trailing" id="Z41-uB-rD1"/>
+                                    <constraint firstAttribute="trailing" secondItem="noP-W5-ePQ" secondAttribute="trailing" id="bYb-1H-U89"/>
+                                    <constraint firstItem="noP-W5-ePQ" firstAttribute="leading" secondItem="hbO-8N-gM5" secondAttribute="leading" id="i02-Rk-H49"/>
+                                    <constraint firstAttribute="trailing" secondItem="5EI-V6-rqB" secondAttribute="trailing" id="krA-Xj-6Ru"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hbO-8N-gM5" firstAttribute="leading" secondItem="wgw-hp-kAh" secondAttribute="leading" constant="8" id="LMV-kf-5hu"/>
+                            <constraint firstItem="hbO-8N-gM5" firstAttribute="centerY" secondItem="wgw-hp-kAh" secondAttribute="centerY" id="YPn-KD-uPa"/>
+                            <constraint firstItem="wgw-hp-kAh" firstAttribute="trailing" secondItem="hbO-8N-gM5" secondAttribute="trailing" constant="8" id="dtH-bt-7it"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wgw-hp-kAh"/>
+                    </view>
+                    <connections>
+                        <segue destination="mBW-fc-b0k" kind="show" identifier="mainSegue" id="YxH-nT-KRq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xeL-59-MuO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="830" y="17"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="b1u-Jv-sgE">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="mBW-fc-b0k" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="frT-qM-8aA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="830" y="478"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="GGD-Hh-Urp"/>
+    </inferredMetricsTieBreakers>
+</document>

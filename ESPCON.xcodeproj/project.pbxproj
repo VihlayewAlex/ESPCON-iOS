@@ -1,0 +1,436 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A1690151F78675F00D26755 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1690141F78675F00D26755 /* AppDelegate.m */; };
+		3A16901B1F78675F00D26755 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A1690191F78675F00D26755 /* Main.storyboard */; };
+		3A16901E1F78675F00D26755 /* ESPCON.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A16901C1F78675F00D26755 /* ESPCON.xcdatamodeld */; };
+		3A1690201F78675F00D26755 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A16901F1F78675F00D26755 /* Assets.xcassets */; };
+		3A1690231F78675F00D26755 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A1690211F78675F00D26755 /* LaunchScreen.storyboard */; };
+		3A1690261F78675F00D26755 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1690251F78675F00D26755 /* main.m */; };
+		3A7FBB081F79A72100E6F0FB /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FBB061F79A72100E6F0FB /* UIScrollView+EmptyDataSet.m */; };
+		3A7FBB0E1F79A82200E6F0FB /* DevicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FBB0D1F79A82200E6F0FB /* DevicesViewController.m */; };
+		3A7FBB121F79B1C400E6F0FB /* AddDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FBB111F79B1C400E6F0FB /* AddDeviceViewController.m */; };
+		3A7FBB141F79B88C00E6F0FB /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A7FBB131F79B88C00E6F0FB /* Auth.storyboard */; };
+		3A7FBB2A1F7A304E00E6F0FB /* CoreBluetoothService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FBB291F7A304E00E6F0FB /* CoreBluetoothService.m */; };
+		3A7FBB2F1F7A40A900E6F0FB /* NetworkingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FBB2E1F7A40A900E6F0FB /* NetworkingService.m */; };
+		3AED02861F7A43160072D788 /* SplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AED02851F7A43160072D788 /* SplashScreenViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3A1690101F78675F00D26755 /* ESPCON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ESPCON.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A1690131F78675F00D26755 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3A1690141F78675F00D26755 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3A16901A1F78675F00D26755 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3A16901D1F78675F00D26755 /* ESPCON.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ESPCON.xcdatamodel; sourceTree = "<group>"; };
+		3A16901F1F78675F00D26755 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3A1690221F78675F00D26755 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3A1690241F78675F00D26755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A1690251F78675F00D26755 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3A7FBB061F79A72100E6F0FB /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
+		3A7FBB071F79A72100E6F0FB /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
+		3A7FBB0C1F79A82200E6F0FB /* DevicesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DevicesViewController.h; sourceTree = "<group>"; };
+		3A7FBB0D1F79A82200E6F0FB /* DevicesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DevicesViewController.m; sourceTree = "<group>"; };
+		3A7FBB101F79B1C400E6F0FB /* AddDeviceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddDeviceViewController.h; sourceTree = "<group>"; };
+		3A7FBB111F79B1C400E6F0FB /* AddDeviceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddDeviceViewController.m; sourceTree = "<group>"; };
+		3A7FBB131F79B88C00E6F0FB /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		3A7FBB281F7A304E00E6F0FB /* CoreBluetoothService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreBluetoothService.h; sourceTree = "<group>"; };
+		3A7FBB291F7A304E00E6F0FB /* CoreBluetoothService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreBluetoothService.m; sourceTree = "<group>"; };
+		3A7FBB2D1F7A40A900E6F0FB /* NetworkingService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkingService.h; sourceTree = "<group>"; };
+		3A7FBB2E1F7A40A900E6F0FB /* NetworkingService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkingService.m; sourceTree = "<group>"; };
+		3AED02841F7A43160072D788 /* SplashScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SplashScreenViewController.h; sourceTree = "<group>"; };
+		3AED02851F7A43160072D788 /* SplashScreenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SplashScreenViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A16900D1F78675F00D26755 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A1690071F78675F00D26755 = {
+			isa = PBXGroup;
+			children = (
+				3A1690121F78675F00D26755 /* ESPCON */,
+				3A1690111F78675F00D26755 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3A1690111F78675F00D26755 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A1690101F78675F00D26755 /* ESPCON.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A1690121F78675F00D26755 /* ESPCON */ = {
+			isa = PBXGroup;
+			children = (
+				3AED02871F7A431A0072D788 /* SplashScreen */,
+				3A7FBB0F1F79B1B100E6F0FB /* AddDevice */,
+				3A7FBB0B1F79A7CA00E6F0FB /* Devices */,
+				3A7FBB0A1F79A78400E6F0FB /* AppDelegate */,
+				3A7FBB091F79A72800E6F0FB /* EmptyDataSet */,
+				3A7FBB131F79B88C00E6F0FB /* Auth.storyboard */,
+				3A1690191F78675F00D26755 /* Main.storyboard */,
+				3A16901F1F78675F00D26755 /* Assets.xcassets */,
+				3A1690211F78675F00D26755 /* LaunchScreen.storyboard */,
+				3A1690241F78675F00D26755 /* Info.plist */,
+				3A1690251F78675F00D26755 /* main.m */,
+				3A16901C1F78675F00D26755 /* ESPCON.xcdatamodeld */,
+				3A7FBB2C1F7A407C00E6F0FB /* NetworkingService */,
+				3A7FBB2B1F7A305300E6F0FB /* CoreBluetoothService */,
+			);
+			path = ESPCON;
+			sourceTree = "<group>";
+		};
+		3A7FBB091F79A72800E6F0FB /* EmptyDataSet */ = {
+			isa = PBXGroup;
+			children = (
+				3A7FBB071F79A72100E6F0FB /* UIScrollView+EmptyDataSet.h */,
+				3A7FBB061F79A72100E6F0FB /* UIScrollView+EmptyDataSet.m */,
+			);
+			path = EmptyDataSet;
+			sourceTree = "<group>";
+		};
+		3A7FBB0A1F79A78400E6F0FB /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				3A1690131F78675F00D26755 /* AppDelegate.h */,
+				3A1690141F78675F00D26755 /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		3A7FBB0B1F79A7CA00E6F0FB /* Devices */ = {
+			isa = PBXGroup;
+			children = (
+				3A7FBB0C1F79A82200E6F0FB /* DevicesViewController.h */,
+				3A7FBB0D1F79A82200E6F0FB /* DevicesViewController.m */,
+			);
+			path = Devices;
+			sourceTree = "<group>";
+		};
+		3A7FBB0F1F79B1B100E6F0FB /* AddDevice */ = {
+			isa = PBXGroup;
+			children = (
+				3A7FBB101F79B1C400E6F0FB /* AddDeviceViewController.h */,
+				3A7FBB111F79B1C400E6F0FB /* AddDeviceViewController.m */,
+			);
+			path = AddDevice;
+			sourceTree = "<group>";
+		};
+		3A7FBB2B1F7A305300E6F0FB /* CoreBluetoothService */ = {
+			isa = PBXGroup;
+			children = (
+				3A7FBB281F7A304E00E6F0FB /* CoreBluetoothService.h */,
+				3A7FBB291F7A304E00E6F0FB /* CoreBluetoothService.m */,
+			);
+			path = CoreBluetoothService;
+			sourceTree = "<group>";
+		};
+		3A7FBB2C1F7A407C00E6F0FB /* NetworkingService */ = {
+			isa = PBXGroup;
+			children = (
+				3A7FBB2D1F7A40A900E6F0FB /* NetworkingService.h */,
+				3A7FBB2E1F7A40A900E6F0FB /* NetworkingService.m */,
+			);
+			path = NetworkingService;
+			sourceTree = "<group>";
+		};
+		3AED02871F7A431A0072D788 /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				3AED02841F7A43160072D788 /* SplashScreenViewController.h */,
+				3AED02851F7A43160072D788 /* SplashScreenViewController.m */,
+			);
+			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3A16900F1F78675F00D26755 /* ESPCON */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A1690291F78675F00D26755 /* Build configuration list for PBXNativeTarget "ESPCON" */;
+			buildPhases = (
+				3A16900C1F78675F00D26755 /* Sources */,
+				3A16900D1F78675F00D26755 /* Frameworks */,
+				3A16900E1F78675F00D26755 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ESPCON;
+			productName = ESPCON;
+			productReference = 3A1690101F78675F00D26755 /* ESPCON.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3A1690081F78675F00D26755 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Alex Vihlayew";
+				TargetAttributes = {
+					3A16900F1F78675F00D26755 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 3A16900B1F78675F00D26755 /* Build configuration list for PBXProject "ESPCON" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3A1690071F78675F00D26755;
+			productRefGroup = 3A1690111F78675F00D26755 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3A16900F1F78675F00D26755 /* ESPCON */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3A16900E1F78675F00D26755 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A7FBB141F79B88C00E6F0FB /* Auth.storyboard in Resources */,
+				3A1690231F78675F00D26755 /* LaunchScreen.storyboard in Resources */,
+				3A1690201F78675F00D26755 /* Assets.xcassets in Resources */,
+				3A16901B1F78675F00D26755 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3A16900C1F78675F00D26755 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A16901E1F78675F00D26755 /* ESPCON.xcdatamodeld in Sources */,
+				3A1690261F78675F00D26755 /* main.m in Sources */,
+				3AED02861F7A43160072D788 /* SplashScreenViewController.m in Sources */,
+				3A7FBB121F79B1C400E6F0FB /* AddDeviceViewController.m in Sources */,
+				3A1690151F78675F00D26755 /* AppDelegate.m in Sources */,
+				3A7FBB2A1F7A304E00E6F0FB /* CoreBluetoothService.m in Sources */,
+				3A7FBB0E1F79A82200E6F0FB /* DevicesViewController.m in Sources */,
+				3A7FBB081F79A72100E6F0FB /* UIScrollView+EmptyDataSet.m in Sources */,
+				3A7FBB2F1F7A40A900E6F0FB /* NetworkingService.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3A1690191F78675F00D26755 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A16901A1F78675F00D26755 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3A1690211F78675F00D26755 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A1690221F78675F00D26755 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3A1690271F78675F00D26755 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3A1690281F78675F00D26755 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3A16902A1F78675F00D26755 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 22U234HGU8;
+				INFOPLIST_FILE = ESPCON/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vihlayew.ESPCON;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3A16902B1F78675F00D26755 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 22U234HGU8;
+				INFOPLIST_FILE = ESPCON/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vihlayew.ESPCON;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3A16900B1F78675F00D26755 /* Build configuration list for PBXProject "ESPCON" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A1690271F78675F00D26755 /* Debug */,
+				3A1690281F78675F00D26755 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A1690291F78675F00D26755 /* Build configuration list for PBXNativeTarget "ESPCON" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A16902A1F78675F00D26755 /* Debug */,
+				3A16902B1F78675F00D26755 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3A16901C1F78675F00D26755 /* ESPCON.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3A16901D1F78675F00D26755 /* ESPCON.xcdatamodel */,
+			);
+			currentVersion = 3A16901D1F78675F00D26755 /* ESPCON.xcdatamodel */;
+			path = ESPCON.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 3A1690081F78675F00D26755 /* Project object */;
+}
