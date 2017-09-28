@@ -24,19 +24,35 @@
 #pragma mark Auth
 
 - (void)signUpWithName:(NSString*)name password:(NSString*)password email:(NSString*)email {
-    NSURLComponents* requestComponents = [[NSURLComponents alloc] initWithString:@"http://gold2star.kjbsoft.com/espcon/signup.php"];
-    [requestComponents setQuery:@"name="];
-    [requestComponents setQuery:@"password="];
-    [requestComponents setQuery:@"email="];
-    NSURLRequest* request = [[NSURLRequest alloc] initWithURL:[requestComponents URL]];
+    NSURL* url = [[NSURL alloc] initWithString:@"http://gold2star.kjbsoft.com/espcon/signup.php"];
+    NSString* parameters = [[[[[@"name=" stringByAppendingString:name] stringByAppendingString:@"&email="] stringByAppendingString:email] stringByAppendingString:@"&password="] stringByAppendingString:password];
+    NSData* body = [parameters dataUsingEncoding:NSASCIIStringEncoding];
     
-    [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:url];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:[NSString stringWithFormat:@"%d", [body length]] forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:body];
+    
+    NSLog(@"%@", request);
+    
+    [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
-            NSLog(@"ERROR:, %@", [error localizedDescription]);
+            NSLog(@"ERROR: %@", [error localizedDescription]);
         } else {
-            NSLog(@"%@", data);
+            NSError* _Nullable __autoreleasing error;
+            NSDictionary* dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+            if (error) {
+                NSLog(@"ERROR: %@", [error localizedDescription]);
+            } else {
+                //NSLog(@"DATA: %@", dataDictionary);
+                NSNumber* deviceID = (NSNumber*)[dataDictionary valueForKey:@"id"];
+                NSString* message = (NSString*)[dataDictionary valueForKey:@"msg"];
+                NSString* status = (NSString*)[dataDictionary valueForKey:@"status"];
+                NSLog(@"id: %@, msg: %@, status: %@", deviceID, message, status);
+            }
         }
-    }];
+    }] resume];
 }
 
 @end

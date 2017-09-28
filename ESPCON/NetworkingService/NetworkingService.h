@@ -11,5 +11,6 @@
 @interface NetworkingService : NSObject
 
 + (id)shared;
+- (void)signUpWithName:(NSString*)name password:(NSString*)password email:(NSString*)email;
 
 @end

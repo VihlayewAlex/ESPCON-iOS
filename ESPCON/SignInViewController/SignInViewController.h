@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "ESPCON-Swift.h"
 
-@interface SignInViewController : UIViewController
+@interface SignInViewController : UIViewController <UITextFieldDelegate>
 
 @end

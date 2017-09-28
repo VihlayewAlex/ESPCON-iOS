@@ -50,7 +50,7 @@
                                         <rect key="frame" x="0.0" y="50" width="304" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znp-iD-sn8">
                                         <rect key="frame" x="0.0" y="100" width="304" height="40"/>
@@ -61,6 +61,11 @@
                                         <state key="normal" title="Sign In">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -73,7 +78,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="hbO-8N-gM5" firstAttribute="leading" secondItem="wgw-hp-kAh" secondAttribute="leading" constant="8" id="LMV-kf-5hu"/>
                             <constraint firstItem="hbO-8N-gM5" firstAttribute="centerY" secondItem="wgw-hp-kAh" secondAttribute="centerY" id="YPn-KD-uPa"/>
@@ -81,7 +86,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wgw-hp-kAh"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Sign In" id="9xu-Wa-V7P"/>
+                    <tabBarItem key="tabBarItem" title="Sign In" image="signIn" selectedImage="signInFilled" id="9xu-Wa-V7P"/>
                     <connections>
                         <outlet property="contentStackView" destination="hbO-8N-gM5" id="tzD-dc-yYe"/>
                         <outlet property="emailTextField" destination="5EI-V6-rqB" id="nhw-gl-VXs"/>
@@ -107,8 +112,10 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="1ji-81-t3r" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5px-ll-cBy">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="selectedImageTintColor" red="0.33090013270000002" green="0.43333035710000001" blue="0.52895086999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="v7H-0i-y7R" kind="relationship" relationship="viewControllers" id="g9z-cv-bUU"/>
@@ -140,19 +147,19 @@
                                         <rect key="frame" x="0.0" y="50" width="304" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7zq-uA-cIY">
                                         <rect key="frame" x="0.0" y="100" width="304" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AL1-fd-OYj">
                                         <rect key="frame" x="0.0" y="150" width="304" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppu-us-0ih">
                                         <rect key="frame" x="0.0" y="200" width="304" height="40"/>
@@ -163,11 +170,19 @@
                                         <state key="normal" title="Sign Up">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="signUp:" destination="JUm-Sh-eE8" eventType="touchUpInside" id="b2q-th-Pom"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="2ly-BQ-A7d" firstAttribute="leading" secondItem="4U4-Qo-qX7" secondAttribute="leading" constant="8" id="HPa-lA-RbU"/>
                             <constraint firstItem="4U4-Qo-qX7" firstAttribute="trailing" secondItem="2ly-BQ-A7d" secondAttribute="trailing" constant="8" id="Mb1-ym-uLa"/>
@@ -175,7 +190,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4U4-Qo-qX7"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Sign Up" id="rED-yQ-kAm"/>
+                    <tabBarItem key="tabBarItem" title="Sign Up" image="signUp" selectedImage="signUpFilled" id="rED-yQ-kAm"/>
                     <connections>
                         <outlet property="confirmPasswordTextField" destination="AL1-fd-OYj" id="QyG-EG-3Co"/>
                         <outlet property="contentStackView" destination="2ly-BQ-A7d" id="LyA-lH-W5k"/>
@@ -189,6 +204,12 @@
             <point key="canvasLocation" x="1546.875" y="-301.05633802816902"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="signIn" width="33" height="33"/>
+        <image name="signInFilled" width="33" height="33"/>
+        <image name="signUp" width="33" height="33"/>
+        <image name="signUpFilled" width="33" height="33"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="YxH-nT-KRq"/>
     </inferredMetricsTieBreakers>

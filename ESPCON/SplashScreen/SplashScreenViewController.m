@@ -17,7 +17,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    bool isAuthorized = true;
+    bool isAuthorized = false;
     if (isAuthorized) {
         [self performSegueWithIdentifier:@"mainSegue" sender:nil];
     } else {

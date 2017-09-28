@@ -23,22 +23,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    [_nameTextField setDelegate:self];
+    [_emailTextField setDelegate:self];
+    [_passwordTextField setDelegate:self];
+    [_confirmPasswordTextField setDelegate:self];
+    
     [KeyboardAvoiding setAvoidingView:_contentStackView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark Actions
+
+- (IBAction)signUp:(UIButton *)sender {
+    NSString* name = [_nameTextField text];
+    NSString* email = [_emailTextField text];
+    NSString* password = [_passwordTextField text];
+    NSString* passwordConfirmation = [_confirmPasswordTextField text];
+    
+    // Validation
+    if (![password isEqualToString:passwordConfirmation]) {
+        return;
+    }
+    
+    [[NetworkingService shared] signUpWithName:name password:password email:email];
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark UITextFieldDelegate
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return false;
 }
-*/
 
 @end
