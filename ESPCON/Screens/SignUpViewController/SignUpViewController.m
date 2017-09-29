@@ -44,7 +44,17 @@
         return;
     }
     
-    [[NetworkingService shared] signUpWithName:name password:password email:email];
+    [[NetworkingService shared] signUpWithName:name password:password email:email withCompletionHandler:^(NSError* error, NSNumber* deviceID, NSString* status, NSString* message) {
+        UIAlertController* alertController;
+        if (error) {
+            alertController = [UIAlertController alertControllerWithTitle:@"Error" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil]];
+        } else {
+            alertController = [UIAlertController alertControllerWithTitle:status message:message preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil]];
+        }
+        [self presentViewController:alertController animated:YES completion:nil];
+    }];
 }
 
 #pragma mark UITextFieldDelegate

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A1251DD1F7ECDE500D2C198 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1251DC1F7ECDE500D2C198 /* UserInfo.m */; };
 		3A1690151F78675F00D26755 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1690141F78675F00D26755 /* AppDelegate.m */; };
 		3A16901B1F78675F00D26755 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A1690191F78675F00D26755 /* Main.storyboard */; };
 		3A16901E1F78675F00D26755 /* ESPCON.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A16901C1F78675F00D26755 /* ESPCON.xcdatamodeld */; };
@@ -27,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A1251DB1F7ECDE500D2C198 /* UserInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		3A1251DC1F7ECDE500D2C198 /* UserInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 		3A1690101F78675F00D26755 /* ESPCON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ESPCON.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A1690131F78675F00D26755 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3A1690141F78675F00D26755 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -69,6 +72,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A1251D51F7ECD3600D2C198 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3A7FBB2C1F7A407C00E6F0FB /* NetworkingService */,
+				3A7FBB2B1F7A305300E6F0FB /* CoreBluetoothService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3A1251D61F7ECD6F00D2C198 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				3AED02871F7A431A0072D788 /* SplashScreen */,
+				3AB017171F7C655A0010EE46 /* SignUpViewController */,
+				3AB0171B1F7C65850010EE46 /* SignInViewController */,
+				3A7FBB0F1F79B1B100E6F0FB /* AddDevice */,
+				3A7FBB0B1F79A7CA00E6F0FB /* Devices */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		3A1251D71F7ECD8C00D2C198 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				3A7FBB091F79A72800E6F0FB /* EmptyDataSet */,
+				3AB017211F7C6A4D0010EE46 /* KeyboardAvoiding */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		3A1251D81F7ECD9500D2C198 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3A1690211F78675F00D26755 /* LaunchScreen.storyboard */,
+				3A7FBB131F79B88C00E6F0FB /* Auth.storyboard */,
+				3A1690191F78675F00D26755 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		3A1251D91F7ECDBC00D2C198 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3A1251DA1F7ECDC700D2C198 /* Entities */,
+				3A1251D51F7ECD3600D2C198 /* Services */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3A1251DA1F7ECDC700D2C198 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				3A1251DB1F7ECDE500D2C198 /* UserInfo.h */,
+				3A1251DC1F7ECDE500D2C198 /* UserInfo.m */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		3A1690071F78675F00D26755 = {
 			isa = PBXGroup;
 			children = (
@@ -88,24 +149,16 @@
 		3A1690121F78675F00D26755 /* ESPCON */ = {
 			isa = PBXGroup;
 			children = (
-				3AED02871F7A431A0072D788 /* SplashScreen */,
-				3AB017171F7C655A0010EE46 /* SignUpViewController */,
-				3AB0171B1F7C65850010EE46 /* SignInViewController */,
-				3A7FBB0F1F79B1B100E6F0FB /* AddDevice */,
-				3A7FBB0B1F79A7CA00E6F0FB /* Devices */,
 				3A7FBB0A1F79A78400E6F0FB /* AppDelegate */,
-				3A7FBB091F79A72800E6F0FB /* EmptyDataSet */,
-				3AB017211F7C6A4D0010EE46 /* KeyboardAvoiding */,
-				3A1690211F78675F00D26755 /* LaunchScreen.storyboard */,
-				3A7FBB131F79B88C00E6F0FB /* Auth.storyboard */,
-				3A1690191F78675F00D26755 /* Main.storyboard */,
+				3A1251D61F7ECD6F00D2C198 /* Screens */,
+				3A1251D81F7ECD9500D2C198 /* Storyboards */,
+				3A1251D91F7ECDBC00D2C198 /* Model */,
+				3A1251D71F7ECD8C00D2C198 /* Other */,
 				3A16901F1F78675F00D26755 /* Assets.xcassets */,
 				3A1690241F78675F00D26755 /* Info.plist */,
 				3A1690251F78675F00D26755 /* main.m */,
-				3A16901C1F78675F00D26755 /* ESPCON.xcdatamodeld */,
-				3A7FBB2C1F7A407C00E6F0FB /* NetworkingService */,
-				3A7FBB2B1F7A305300E6F0FB /* CoreBluetoothService */,
 				3AB0171C1F7C6A3A0010EE46 /* ESPCON-Bridging-Header.h */,
+				3A16901C1F78675F00D26755 /* ESPCON.xcdatamodeld */,
 			);
 			path = ESPCON;
 			sourceTree = "<group>";
@@ -279,6 +332,7 @@
 				3A7FBB121F79B1C400E6F0FB /* AddDeviceViewController.m in Sources */,
 				3AB0171A1F7C657F0010EE46 /* SignInViewController.m in Sources */,
 				3AB0171F1F7C6A420010EE46 /* KeyboardDismissingView.swift in Sources */,
+				3A1251DD1F7ECDE500D2C198 /* UserInfo.m in Sources */,
 				3AB017201F7C6A420010EE46 /* KeyboardAvoiding.swift in Sources */,
 				3A1690151F78675F00D26755 /* AppDelegate.m in Sources */,
 				3A7FBB2A1F7A304E00E6F0FB /* CoreBluetoothService.m in Sources */,

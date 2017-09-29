@@ -27,6 +27,23 @@
     [KeyboardAvoiding setAvoidingView:_contentStackView];
 }
 
+#pragma mark Actions
+
+- (IBAction)signIn:(UIButton *)sender {
+    NSString* email = [_emailTextField text];
+    NSString* password = [_passwordTextField text];
+    
+    [[NetworkingService shared] logInWithEmail:email password:password withCompletionHandler:^(NSError * error, NSString * status, NSString * message) {
+        if (error) {
+            UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"Error" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil]];
+            [self presentViewController:alertController animated:YES completion:nil];
+        } else {
+            // Log in
+        }
+    }];
+}
+
 #pragma mark UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

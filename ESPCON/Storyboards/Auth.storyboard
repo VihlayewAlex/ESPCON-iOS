@@ -66,6 +66,9 @@
                                                 <integer key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="signIn:" destination="v7H-0i-y7R" eventType="touchUpInside" id="LYE-QG-9UA"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
