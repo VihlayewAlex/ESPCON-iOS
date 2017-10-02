@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "UIScrollView+EmptyDataSet.h"
+#import "DevicesService.h"
+#import "NetworkingService.h"
+#import "LocalDatabaseService.h"
+#import "DeviceTableViewCell.h"
 
-@interface DevicesViewController : UIViewController <DZNEmptyDataSetDelegate, DZNEmptyDataSetSource>
+@interface DevicesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource, DeviceTableViewCellDelegate>
 
 @end

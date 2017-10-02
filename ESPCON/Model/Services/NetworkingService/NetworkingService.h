@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UserInfo.h"
+#import "Device.h"
 
 @interface NetworkingService : NSObject
 
@@ -19,6 +21,19 @@
 
 - (void)logInWithEmail:(NSString* _Nonnull)email
               password:(NSString* _Nonnull)password
- withCompletionHandler:(void(^_Nonnull)(NSError* _Nullable, NSString* _Nullable, NSString* _Nullable))handler;
+ withCompletionHandler:(void(^_Nonnull)(NSError* _Nullable, NSString* _Nullable, NSString* _Nullable, UserInfo* _Nullable))handler;
+
+- (void)getDevicesForUserWithID:(NSString* _Nonnull)userID
+          withCompletionHandler:(void(^_Nonnull)(NSError * _Nullable, NSString * _Nullable status, NSArray * _Nullable))handler;
+
+- (void)addNewDevice:(Device* _Nonnull)device
+withCompletionHandler:(void(^_Nonnull)(NSError * _Nullable error, NSString * _Nullable status, NSString * _Nullable message, NSInteger * _Nullable deviceID))handler;
+
+- (void)deleteDevice:(Device* _Nonnull)device
+withCompletionHandler:(void(^_Nonnull)(NSError * _Nullable error, NSString * _Nullable status, NSString * _Nullable message))handler;
+
+- (void)setDeviceStateON:(BOOL)state
+               forDevice:(Device* _Nonnull)device
+   withCompletionHandler:(void(^_Nonnull)(NSError * _Nullable error, NSString * _Nullable status, NSString * _Nullable message))handler;
 
 @end

@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "ESPCON-Swift.h"
+#import "LocalDatabaseService.h"
+#import "CoreBluetoothService.h"
+#import "NetworkingService.h"
+#import <SystemConfiguration/CaptiveNetwork.h>
 
-@interface AddDeviceViewController : UIViewController
+@interface AddDeviceViewController : UIViewController <UITextFieldDelegate, CoreBluetoothServiceDelegate>
 
 @end

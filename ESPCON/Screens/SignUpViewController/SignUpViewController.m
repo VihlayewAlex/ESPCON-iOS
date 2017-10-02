@@ -34,6 +34,8 @@
 #pragma mark Actions
 
 - (IBAction)signUp:(UIButton *)sender {
+    [[self view] endEditing:YES];
+    
     NSString* name = [_nameTextField text];
     NSString* email = [_emailTextField text];
     NSString* password = [_passwordTextField text];
@@ -45,15 +47,19 @@
     }
     
     [[NetworkingService shared] signUpWithName:name password:password email:email withCompletionHandler:^(NSError* error, NSNumber* deviceID, NSString* status, NSString* message) {
-        UIAlertController* alertController;
-        if (error) {
-            alertController = [UIAlertController alertControllerWithTitle:@"Error" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
-            [alertController addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil]];
-        } else {
-            alertController = [UIAlertController alertControllerWithTitle:status message:message preferredStyle:UIAlertControllerStyleAlert];
-            [alertController addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil]];
-        }
-        [self presentViewController:alertController animated:YES completion:nil];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIAlertController* alertController;
+            if (error) {
+                alertController = [UIAlertController alertControllerWithTitle:@"Error" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
+                [alertController addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil]];
+            } else {
+                alertController = [UIAlertController alertControllerWithTitle:status message:message preferredStyle:UIAlertControllerStyleAlert];
+                [alertController addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil]];
+            }
+            if (alertController) {
+                [self presentViewController:alertController animated:YES completion:nil];
+            }
+        });
     }];
 }
 

@@ -16,9 +16,8 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-    bool isAuthorized = false;
-    if (isAuthorized) {
+
+    if ([[LocalDatabaseService shared] getUserInfo]) {
         [self performSegueWithIdentifier:@"mainSegue" sender:nil];
     } else {
         [self performSegueWithIdentifier:@"authSegue" sender:nil];

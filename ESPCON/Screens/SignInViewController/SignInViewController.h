@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ESPCON-Swift.h"
 #import "NetworkingService.h"
+#import "LocalDatabaseService.h"
 
 @interface SignInViewController : UIViewController <UITextFieldDelegate>
 

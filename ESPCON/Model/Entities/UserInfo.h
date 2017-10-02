@@ -17,4 +17,6 @@
 @property (strong, nonatomic) NSString* otpCode;
 @property (strong, nonatomic) NSString* access;
 
+- (instancetype)initWithUserID:(NSString*)userID userName:(NSString*)userName userEmail:(NSString*)userEmail password:(NSString*)password otpCode:(NSString*)otpCode access:(NSString*)access;
+
 @end

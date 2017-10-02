@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LocalDatabaseService.h"
 
 @interface SplashScreenViewController : UIViewController
 

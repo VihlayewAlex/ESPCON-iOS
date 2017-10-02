@@ -9,8 +9,20 @@
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
 
+@protocol CoreBluetoothServiceDelegate
+
+- (void)didConnectToPeripheral:(CBPeripheral*)peripheral;
+
+@end
+
 @interface CoreBluetoothService : NSObject <CBCentralManagerDelegate, CBPeripheralDelegate>
 
+@property (strong, nonatomic) NSMutableArray* discoveredDevices;
+
 + (id)shared;
+
+- (void)startScan;
+- (void)stopScan;
+- (void)connectToPeripheral:(CBPeripheral*)device;
 
 @end
