@@ -23,7 +23,7 @@
 @property (weak, nonatomic) UITextField* lastActiveField;
 @property (strong, nonatomic) NSTimer* timer;
 
-@property (strong, nonatomic) CBPeripheral* connectedDevice;
+@property (assign, nonatomic) BOOL isDeviceConnected;
 
 @end
 
@@ -38,7 +38,7 @@
     [_deviceNameField setDelegate:self];
     [_deviceIDField setDelegate:self];
     
-    [[CoreBluetoothService shared] setDelegate:self];
+    [[EspTouchService shared] setDelegate:self];
     
     [self configureSSIDfield];
 }
@@ -58,12 +58,12 @@
 #pragma mark Actions
 
 - (IBAction)getDeviceID:(UIButton *)sender {
-    if (_connectedDevice) {
+    if (_isDeviceConnected) {
         NSString* SSID = [_ssidNameField text];
         NSString* password = [_passwordField text];
         NSString* userID = [[[LocalDatabaseService shared] getUserInfo] userID];
         NSString* name = [_deviceNameField text];
-        NSString* UUID = [[_connectedDevice identifier] UUIDString];
+        NSString* UUID = @"SOME_UUID"; // Device identifier
         
         if (!(SSID && password && userID && name && UUID)) {
             NSLog(@"Need more data");
@@ -76,12 +76,12 @@
                                                userID:userID
                                            MACaddress:UUID
                                                 state:nil];
-        [[NetworkingService shared] addNewDevice:device withCompletionHandler:^(NSError * _Nullable error, NSString * _Nullable status, NSString * _Nullable message, NSInteger * _Nullable deviceID) {
+        [[NetworkingService shared] addNewDevice:device withCompletionHandler:^(NSError * _Nullable error, NSString * _Nullable status, NSString * _Nullable message, NSInteger deviceID) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (error) {
                     NSLog(@"ERROR: %@", [error localizedDescription]);
                 } else {
-                    [_deviceIDField setText:[NSString stringWithFormat:@"%ld", (long)*deviceID]];
+                    [_deviceIDField setText:[NSString stringWithFormat:@"%ld", (long)deviceID]];
                     UIAlertController* alertController = [UIAlertController alertControllerWithTitle:status message:message preferredStyle:UIAlertControllerStyleAlert];
                     [alertController addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil]];
                     [self presentViewController:alertController animated:YES completion:nil];
@@ -96,6 +96,9 @@
 }
 
 - (IBAction)saveToBoard:(UIButton *)sender {
+    NSString* SSID = [_ssidNameField text];
+    NSString* password = [_passwordField text];
+    
     
 }
 
@@ -111,15 +114,8 @@
     return false;
 }
 
-#pragma mark CoreBluetoothServiceDelegate
+#pragma mark EspTouchServiceDelegate
 
-- (void)didConnectToPeripheral:(CBPeripheral *)peripheral {
-    [self setConnectedDevice:peripheral];
-    
-    [_connectedStatusView setBackgroundColor:[UIColor greenColor]];
-    [_connectedStatusLabel setText:[@"Connected to " stringByAppendingString:[peripheral name]]];
-    [_connectedStatusViewHeightConstraint setConstant:40];
-    [_deviceNameField setText:[peripheral name]];
-}
+
 
 @end

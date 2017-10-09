@@ -27,7 +27,7 @@
           withCompletionHandler:(void(^_Nonnull)(NSError * _Nullable, NSString * _Nullable status, NSArray * _Nullable))handler;
 
 - (void)addNewDevice:(Device* _Nonnull)device
-withCompletionHandler:(void(^_Nonnull)(NSError * _Nullable error, NSString * _Nullable status, NSString * _Nullable message, NSInteger * _Nullable deviceID))handler;
+withCompletionHandler:(void(^_Nonnull)(NSError * _Nullable error, NSString * _Nullable status, NSString * _Nullable message, NSInteger deviceID))handler;
 
 - (void)deleteDevice:(Device* _Nonnull)device
 withCompletionHandler:(void(^_Nonnull)(NSError * _Nullable error, NSString * _Nullable status, NSString * _Nullable message))handler;

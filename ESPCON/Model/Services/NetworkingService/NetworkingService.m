@@ -145,7 +145,7 @@
     }] resume];
 }
 
-- (void)addNewDevice:(Device* _Nonnull)device withCompletionHandler:(void(^_Nonnull)(NSError * _Nullable error, NSString * _Nullable status, NSString * _Nullable message, NSInteger * _Nullable deviceID))handler {
+- (void)addNewDevice:(Device* _Nonnull)device withCompletionHandler:(void(^_Nonnull)(NSError * _Nullable error, NSString * _Nullable status, NSString * _Nullable message, NSInteger deviceID))handler {
     NSURL* url = [[NSURL alloc] initWithString:@"http://gold2star.kjbsoft.com/espcon/get_newDevId.php"];
     NSString* parameters = [[[[[[[[[@"user_id=" stringByAppendingString:[device userID]] stringByAppendingString:@"&device_name="] stringByAppendingString:[device name]] stringByAppendingString:@"&ssid="] stringByAppendingString:[device SSID]] stringByAppendingString:@"&password="] stringByAppendingString:[device password]] stringByAppendingString:@"&mac_address="] stringByAppendingString:[device MACaddress]];
     NSData* body = [parameters dataUsingEncoding:NSASCIIStringEncoding];
@@ -159,7 +159,7 @@
     [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
             NSLog(@"ERROR: %@", [error localizedDescription]);
-            handler(error, nil, nil, nil);
+            handler(error, nil, nil, 0);
         } else {
             NSError* _Nullable __autoreleasing error;
             NSDictionary* dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
@@ -167,7 +167,7 @@
             NSString* status = [dataDictionary valueForKey:@"status"];
             NSString* message = [dataDictionary valueForKey:@"msg"];
             NSInteger deviceID = [[dataDictionary valueForKey:@"id"] integerValue];
-            handler(nil, status, message, &deviceID);
+            handler(nil, status, message, deviceID);
         }
     }] resume];
 }

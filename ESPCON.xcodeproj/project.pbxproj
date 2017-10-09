@@ -18,7 +18,7 @@
 		3A7FBB0E1F79A82200E6F0FB /* DevicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FBB0D1F79A82200E6F0FB /* DevicesViewController.m */; };
 		3A7FBB121F79B1C400E6F0FB /* AddDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FBB111F79B1C400E6F0FB /* AddDeviceViewController.m */; };
 		3A7FBB141F79B88C00E6F0FB /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A7FBB131F79B88C00E6F0FB /* Auth.storyboard */; };
-		3A7FBB2A1F7A304E00E6F0FB /* CoreBluetoothService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FBB291F7A304E00E6F0FB /* CoreBluetoothService.m */; };
+		3A7FBB2A1F7A304E00E6F0FB /* EspTouchService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FBB291F7A304E00E6F0FB /* EspTouchService.m */; };
 		3A7FBB2F1F7A40A900E6F0FB /* NetworkingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FBB2E1F7A40A900E6F0FB /* NetworkingService.m */; };
 		3AB017161F7C65540010EE46 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB017151F7C65540010EE46 /* SignUpViewController.m */; };
 		3AB0171A1F7C657F0010EE46 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB017191F7C657F0010EE46 /* SignInViewController.m */; };
@@ -40,7 +40,6 @@
 		3AE4144D1F81AE7C0008B292 /* IQUIScrollView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE414391F81AD4E0008B292 /* IQUIScrollView+Additions.m */; };
 		3AE4144E1F81AE7C0008B292 /* IQUIView+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE4143A1F81AD4E0008B292 /* IQUIView+Hierarchy.m */; };
 		3AE4144F1F81AE7C0008B292 /* IQUIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE4143F1F81AD4E0008B292 /* IQUIViewController+Additions.m */; };
-		3AE414531F81AFD80008B292 /* ScanningTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE414521F81AFD80008B292 /* ScanningTableViewController.m */; };
 		3AE414561F81C7900008B292 /* DeviceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE414551F81C7900008B292 /* DeviceTableViewCell.m */; };
 		3AED02861F7A43160072D788 /* SplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AED02851F7A43160072D788 /* SplashScreenViewController.m */; };
 		3AF67BE71F7EE4C30074D7BE /* LocalDatabaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF67BE61F7EE4C30074D7BE /* LocalDatabaseService.m */; };
@@ -65,8 +64,8 @@
 		3A7FBB101F79B1C400E6F0FB /* AddDeviceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddDeviceViewController.h; sourceTree = "<group>"; };
 		3A7FBB111F79B1C400E6F0FB /* AddDeviceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddDeviceViewController.m; sourceTree = "<group>"; };
 		3A7FBB131F79B88C00E6F0FB /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
-		3A7FBB281F7A304E00E6F0FB /* CoreBluetoothService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreBluetoothService.h; sourceTree = "<group>"; };
-		3A7FBB291F7A304E00E6F0FB /* CoreBluetoothService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreBluetoothService.m; sourceTree = "<group>"; };
+		3A7FBB281F7A304E00E6F0FB /* EspTouchService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EspTouchService.h; sourceTree = "<group>"; };
+		3A7FBB291F7A304E00E6F0FB /* EspTouchService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EspTouchService.m; sourceTree = "<group>"; };
 		3A7FBB2D1F7A40A900E6F0FB /* NetworkingService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkingService.h; sourceTree = "<group>"; };
 		3A7FBB2E1F7A40A900E6F0FB /* NetworkingService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkingService.m; sourceTree = "<group>"; };
 		3AB017141F7C65540010EE46 /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
@@ -111,8 +110,6 @@
 		3AE4143F1F81AD4E0008B292 /* IQUIViewController+Additions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "IQUIViewController+Additions.m"; sourceTree = "<group>"; };
 		3AE414401F81AD4E0008B292 /* IQUIView+Hierarchy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IQUIView+Hierarchy.h"; sourceTree = "<group>"; };
 		3AE414411F81AD4E0008B292 /* IQKeyboardReturnKeyHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IQKeyboardReturnKeyHandler.m; sourceTree = "<group>"; };
-		3AE414511F81AFD80008B292 /* ScanningTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanningTableViewController.h; sourceTree = "<group>"; };
-		3AE414521F81AFD80008B292 /* ScanningTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanningTableViewController.m; sourceTree = "<group>"; };
 		3AE414541F81C7900008B292 /* DeviceTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceTableViewCell.h; sourceTree = "<group>"; };
 		3AE414551F81C7900008B292 /* DeviceTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceTableViewCell.m; sourceTree = "<group>"; };
 		3AED02841F7A43160072D788 /* SplashScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SplashScreenViewController.h; sourceTree = "<group>"; };
@@ -138,7 +135,7 @@
 				3AE414161F8126DF0008B292 /* DevicesService */,
 				3AF67BE41F7EE4A10074D7BE /* LocalDatabaseService */,
 				3A7FBB2C1F7A407C00E6F0FB /* NetworkingService */,
-				3A7FBB2B1F7A305300E6F0FB /* CoreBluetoothService */,
+				3A7FBB2B1F7A305300E6F0FB /* EspTouchService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -151,7 +148,6 @@
 				3AB0171B1F7C65850010EE46 /* SignInViewController */,
 				3A7FBB0F1F79B1B100E6F0FB /* AddDevice */,
 				3A7FBB0B1F79A7CA00E6F0FB /* Devices */,
-				3AE414501F81AFA30008B292 /* Scanning */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -267,13 +263,13 @@
 			path = AddDevice;
 			sourceTree = "<group>";
 		};
-		3A7FBB2B1F7A305300E6F0FB /* CoreBluetoothService */ = {
+		3A7FBB2B1F7A305300E6F0FB /* EspTouchService */ = {
 			isa = PBXGroup;
 			children = (
-				3A7FBB281F7A304E00E6F0FB /* CoreBluetoothService.h */,
-				3A7FBB291F7A304E00E6F0FB /* CoreBluetoothService.m */,
+				3A7FBB281F7A304E00E6F0FB /* EspTouchService.h */,
+				3A7FBB291F7A304E00E6F0FB /* EspTouchService.m */,
 			);
-			path = CoreBluetoothService;
+			path = EspTouchService;
 			sourceTree = "<group>";
 		};
 		3A7FBB2C1F7A407C00E6F0FB /* NetworkingService */ = {
@@ -399,15 +395,6 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
-		3AE414501F81AFA30008B292 /* Scanning */ = {
-			isa = PBXGroup;
-			children = (
-				3AE414511F81AFD80008B292 /* ScanningTableViewController.h */,
-				3AE414521F81AFD80008B292 /* ScanningTableViewController.m */,
-			);
-			path = Scanning;
-			sourceTree = "<group>";
-		};
 		3AED02871F7A431A0072D788 /* SplashScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -516,12 +503,11 @@
 				3AE414441F81AE460008B292 /* IQTitleBarButtonItem.m in Sources */,
 				3AB0171A1F7C657F0010EE46 /* SignInViewController.m in Sources */,
 				3AB0171F1F7C6A420010EE46 /* KeyboardDismissingView.swift in Sources */,
-				3AE414531F81AFD80008B292 /* ScanningTableViewController.m in Sources */,
 				3A1251DD1F7ECDE500D2C198 /* UserInfo.m in Sources */,
 				3AB017201F7C6A420010EE46 /* KeyboardAvoiding.swift in Sources */,
 				3A1690151F78675F00D26755 /* AppDelegate.m in Sources */,
 				3AE4144A1F81AE7C0008B292 /* IQNSArray+Sort.m in Sources */,
-				3A7FBB2A1F7A304E00E6F0FB /* CoreBluetoothService.m in Sources */,
+				3A7FBB2A1F7A304E00E6F0FB /* EspTouchService.m in Sources */,
 				3AE4144C1F81AE7C0008B292 /* IQUITextFieldView+Additions.m in Sources */,
 				3A7FBB0E1F79A82200E6F0FB /* DevicesViewController.m in Sources */,
 				3A7FBB081F79A72100E6F0FB /* UIScrollView+EmptyDataSet.m in Sources */,
