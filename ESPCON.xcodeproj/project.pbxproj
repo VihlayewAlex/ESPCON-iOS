@@ -14,11 +14,11 @@
 		3A1690201F78675F00D26755 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A16901F1F78675F00D26755 /* Assets.xcassets */; };
 		3A1690231F78675F00D26755 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A1690211F78675F00D26755 /* LaunchScreen.storyboard */; };
 		3A1690261F78675F00D26755 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1690251F78675F00D26755 /* main.m */; };
+		3A624C561F9B7CEF0009DD4D /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A624C551F9B7CEF0009DD4D /* NetworkExtension.framework */; };
 		3A7FBB081F79A72100E6F0FB /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FBB061F79A72100E6F0FB /* UIScrollView+EmptyDataSet.m */; };
 		3A7FBB0E1F79A82200E6F0FB /* DevicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FBB0D1F79A82200E6F0FB /* DevicesViewController.m */; };
 		3A7FBB121F79B1C400E6F0FB /* AddDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FBB111F79B1C400E6F0FB /* AddDeviceViewController.m */; };
 		3A7FBB141F79B88C00E6F0FB /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A7FBB131F79B88C00E6F0FB /* Auth.storyboard */; };
-		3A7FBB2A1F7A304E00E6F0FB /* EspTouchService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FBB291F7A304E00E6F0FB /* EspTouchService.m */; };
 		3A7FBB2F1F7A40A900E6F0FB /* NetworkingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FBB2E1F7A40A900E6F0FB /* NetworkingService.m */; };
 		3AB017161F7C65540010EE46 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB017151F7C65540010EE46 /* SignUpViewController.m */; };
 		3AB0171A1F7C657F0010EE46 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB017191F7C657F0010EE46 /* SignInViewController.m */; };
@@ -57,6 +57,8 @@
 		3A1690221F78675F00D26755 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A1690241F78675F00D26755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A1690251F78675F00D26755 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3A624C531F9B7CEF0009DD4D /* ESPCON.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ESPCON.entitlements; sourceTree = "<group>"; };
+		3A624C551F9B7CEF0009DD4D /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		3A7FBB061F79A72100E6F0FB /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
 		3A7FBB071F79A72100E6F0FB /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
 		3A7FBB0C1F79A82200E6F0FB /* DevicesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DevicesViewController.h; sourceTree = "<group>"; };
@@ -64,8 +66,6 @@
 		3A7FBB101F79B1C400E6F0FB /* AddDeviceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddDeviceViewController.h; sourceTree = "<group>"; };
 		3A7FBB111F79B1C400E6F0FB /* AddDeviceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddDeviceViewController.m; sourceTree = "<group>"; };
 		3A7FBB131F79B88C00E6F0FB /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
-		3A7FBB281F7A304E00E6F0FB /* EspTouchService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EspTouchService.h; sourceTree = "<group>"; };
-		3A7FBB291F7A304E00E6F0FB /* EspTouchService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EspTouchService.m; sourceTree = "<group>"; };
 		3A7FBB2D1F7A40A900E6F0FB /* NetworkingService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkingService.h; sourceTree = "<group>"; };
 		3A7FBB2E1F7A40A900E6F0FB /* NetworkingService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkingService.m; sourceTree = "<group>"; };
 		3AB017141F7C65540010EE46 /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
@@ -123,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A624C561F9B7CEF0009DD4D /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +136,6 @@
 				3AE414161F8126DF0008B292 /* DevicesService */,
 				3AF67BE41F7EE4A10074D7BE /* LocalDatabaseService */,
 				3A7FBB2C1F7A407C00E6F0FB /* NetworkingService */,
-				3A7FBB2B1F7A305300E6F0FB /* EspTouchService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -197,6 +197,7 @@
 			children = (
 				3A1690121F78675F00D26755 /* ESPCON */,
 				3A1690111F78675F00D26755 /* Products */,
+				3A624C541F9B7CEF0009DD4D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -211,6 +212,7 @@
 		3A1690121F78675F00D26755 /* ESPCON */ = {
 			isa = PBXGroup;
 			children = (
+				3A624C531F9B7CEF0009DD4D /* ESPCON.entitlements */,
 				3A7FBB0A1F79A78400E6F0FB /* AppDelegate */,
 				3A1251D61F7ECD6F00D2C198 /* Screens */,
 				3A1251D81F7ECD9500D2C198 /* Storyboards */,
@@ -223,6 +225,14 @@
 				3A16901C1F78675F00D26755 /* ESPCON.xcdatamodeld */,
 			);
 			path = ESPCON;
+			sourceTree = "<group>";
+		};
+		3A624C541F9B7CEF0009DD4D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A624C551F9B7CEF0009DD4D /* NetworkExtension.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		3A7FBB091F79A72800E6F0FB /* EmptyDataSet */ = {
@@ -261,15 +271,6 @@
 				3A7FBB111F79B1C400E6F0FB /* AddDeviceViewController.m */,
 			);
 			path = AddDevice;
-			sourceTree = "<group>";
-		};
-		3A7FBB2B1F7A305300E6F0FB /* EspTouchService */ = {
-			isa = PBXGroup;
-			children = (
-				3A7FBB281F7A304E00E6F0FB /* EspTouchService.h */,
-				3A7FBB291F7A304E00E6F0FB /* EspTouchService.m */,
-			);
-			path = EspTouchService;
 			sourceTree = "<group>";
 		};
 		3A7FBB2C1F7A407C00E6F0FB /* NetworkingService */ = {
@@ -446,6 +447,11 @@
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HotspotConfiguration = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -507,7 +513,6 @@
 				3AB017201F7C6A420010EE46 /* KeyboardAvoiding.swift in Sources */,
 				3A1690151F78675F00D26755 /* AppDelegate.m in Sources */,
 				3AE4144A1F81AE7C0008B292 /* IQNSArray+Sort.m in Sources */,
-				3A7FBB2A1F7A304E00E6F0FB /* EspTouchService.m in Sources */,
 				3AE4144C1F81AE7C0008B292 /* IQUITextFieldView+Additions.m in Sources */,
 				3A7FBB0E1F79A82200E6F0FB /* DevicesViewController.m in Sources */,
 				3A7FBB081F79A72100E6F0FB /* UIScrollView+EmptyDataSet.m in Sources */,
@@ -591,7 +596,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -640,7 +645,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -652,12 +657,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ESPCON/ESPCON.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 22U234HGU8;
+				DEVELOPMENT_TEAM = ZJ2X3L2QM5;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = ESPCON/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = vihlayew.ESPCON;
+				PRODUCT_BUNDLE_IDENTIFIER = smartbyte.ESPCON;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ESPCON/ESPCON-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -671,12 +678,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ESPCON/ESPCON.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 22U234HGU8;
+				DEVELOPMENT_TEAM = ZJ2X3L2QM5;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				INFOPLIST_FILE = ESPCON/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = vihlayew.ESPCON;
+				PRODUCT_BUNDLE_IDENTIFIER = smartbyte.ESPCON;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ESPCON/ESPCON-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

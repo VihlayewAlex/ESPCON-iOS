@@ -23,13 +23,12 @@
 @property (weak, nonatomic) UITextField* lastActiveField;
 @property (strong, nonatomic) NSTimer* timer;
 
-@property (assign, nonatomic) BOOL isDeviceConnected;
-
 @end
 
 @implementation AddDeviceViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     [_ssidNameField setDelegate:self];
@@ -38,27 +37,43 @@
     [_deviceNameField setDelegate:self];
     [_deviceIDField setDelegate:self];
     
-    [[EspTouchService shared] setDelegate:self];
-    
     [self configureSSIDfield];
 }
 
-- (void)configureSSIDfield {
-    NSString *wifiName = nil;
-    NSArray *ifs = (__bridge_transfer id)CNCopySupportedInterfaces();
-    for (NSString *ifnam in ifs) {
-        NSDictionary *info = (__bridge_transfer id)CNCopyCurrentNetworkInfo((__bridge CFStringRef)ifnam);
-        if (info[@"SSID"]) {
-            wifiName = info[@"SSID"];
+- (void)configureSSIDfield
+{
+    NSString* SSID = [self fetchSsid];
+    if (![SSID isEqualToString:@"ESP32DEV"]) {
+        [_ssidNameField setText:SSID];
+    }
+}
+
+- (NSString *)fetchSsid
+{
+    NSDictionary *ssidInfo = [self fetchNetInfo];
+    
+    return [ssidInfo objectForKey:@"SSID"];
+}
+
+- (NSDictionary *)fetchNetInfo
+{
+    NSArray *interfaceNames = CFBridgingRelease(CNCopySupportedInterfaces());
+    
+    NSDictionary *SSIDInfo;
+    for (NSString *interfaceName in interfaceNames) {
+        SSIDInfo = CFBridgingRelease(CNCopyCurrentNetworkInfo((__bridge CFStringRef)interfaceName));
+        
+        BOOL isNotEmpty = (SSIDInfo.count > 0);
+        if (isNotEmpty) {
+            break;
         }
     }
-    [_ssidNameField setText:wifiName];
+    return SSIDInfo;
 }
 
 #pragma mark Actions
 
 - (IBAction)getDeviceID:(UIButton *)sender {
-    if (_isDeviceConnected) {
         NSString* SSID = [_ssidNameField text];
         NSString* password = [_passwordField text];
         NSString* userID = [[[LocalDatabaseService shared] getUserInfo] userID];
@@ -88,18 +103,87 @@
                 }
             });
         }];
-    } else {
-        UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"No device" message:@"Connect to any device first" preferredStyle:UIAlertControllerStyleAlert];
-        [alertController addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil]];
-        [self presentViewController:alertController animated:YES completion:nil];
-    }
 }
 
 - (IBAction)saveToBoard:(UIButton *)sender {
     NSString* SSID = [_ssidNameField text];
     NSString* password = [_passwordField text];
+    NSString* ID = [[[LocalDatabaseService shared] getUserInfo] userID];
+    
+    if (!(SSID) || [SSID isEqualToString:@""]) {
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"SSID fields can't be empty" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+    } else if (!(password) || [password isEqualToString:@""]) {
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Password field can't be empty" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+    } else if (![password isEqualToString:[_confirmPasswordField text]]) {
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Passwords must match" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+    } else if (!(ID) || [ID isEqualToString:@""]) {
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"ID fields can't be empty" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+    } else {
+    
+        NEHotspotConfiguration *configuration = [[NEHotspotConfiguration
+                                              alloc] initWithSSID:@"ESP32DEV" passphrase:@"12345678" isWEP:NO];
+        configuration.joinOnce = YES;
+    
+        [[NEHotspotConfigurationManager sharedManager] applyConfiguration:configuration completionHandler:^(NSError * _Nullable error) {
+            if (error) {
+                NSLog(@"%@", [error localizedDescription]);
+            }
+            expirationDate = [NSDate dateWithTimeIntervalSinceNow:5];
+            [self startConfigurationWithSSID:SSID password:password ID:ID];
+        }];
+    }
+}
+
+NSDate* expirationDate;
+- (void)startConfigurationWithSSID:(NSString*)SSID password:(NSString*)password ID:(NSString*)ID {
+    NSLog(@"Started configuration...");
     
     
+    NSTimer* timer = [[NSTimer alloc] initWithFireDate:[NSDate dateWithTimeIntervalSinceNow:1] interval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        
+        if ([expirationDate timeIntervalSinceNow] > 0) {
+            NSLog(@"Will perform request");
+            NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[[[[[@"http://192.168.4.1/name:" stringByAppendingString:SSID]
+                                                                                                        stringByAppendingString:@"&pass:"]
+                                                                                                       stringByAppendingString:password]
+                                                                                                      stringByAppendingString:@"&"]
+                                                                                                     stringByAppendingString:ID]]];
+            [request setHTTPMethod:@"GET"];
+            [request setTimeoutInterval:3];
+            NSLog(@"Will execute local request: %@", [[request URL] absoluteString]);
+            [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                if (error) {
+                    NSLog(@"Local request error: %@", [error localizedDescription]);
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [self startConfigurationWithSSID:SSID password:password ID:ID];
+                    });
+                } else {
+                    NSLog(@"Get response");
+                }
+            }] resume];
+            
+        } else {
+            [timer invalidate];
+            NSLog(@"Timer invalidated");
+        }
+        
+    }];
+    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
+}
+
+- (void)completeConfigurationWithSuccess:(BOOL)success {
+    [[NEHotspotConfigurationManager sharedManager] removeConfigurationForSSID:@"ESP32DEV"];
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:(success ? @"Success" : @"Error") message:(success ? @"Configuration completed!" : @"ID fields can't be empty") preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil]];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (IBAction)signOut:(UIButton *)sender {
@@ -113,9 +197,5 @@
     [textField resignFirstResponder];
     return false;
 }
-
-#pragma mark EspTouchServiceDelegate
-
-
 
 @end

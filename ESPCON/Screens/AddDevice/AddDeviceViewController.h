@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "ESPCON-Swift.h"
 #import "LocalDatabaseService.h"
-#import "EspTouchService.h"
 #import "NetworkingService.h"
 #import <SystemConfiguration/CaptiveNetwork.h>
+#import <NetworkExtension/NetworkExtension.h>
 
-@interface AddDeviceViewController : UIViewController <UITextFieldDelegate, CoreBluetoothServiceDelegate>
+@interface AddDeviceViewController : UIViewController <UITextFieldDelegate>
 
 @end

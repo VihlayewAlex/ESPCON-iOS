@@ -24,7 +24,7 @@
 #pragma mark UserInfo saving
 
 - (void)saveUserInfo:(UserInfo* _Nullable)userInfo {
-    NSManagedObjectContext* context = [[(AppDelegate*)([[UIApplication sharedApplication] delegate]) persistentContainer] viewContext];
+    NSManagedObjectContext* context = [(AppDelegate*)([[UIApplication sharedApplication] delegate]) managedObjectContext];
     
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"UserInfoData" inManagedObjectContext:context];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -51,7 +51,7 @@
 }
 
 - (UserInfo* _Nullable)getUserInfo {
-    NSManagedObjectContext* context = [[(AppDelegate*)([[UIApplication sharedApplication] delegate]) persistentContainer] viewContext];
+    NSManagedObjectContext* context = [(AppDelegate*)([[UIApplication sharedApplication] delegate]) managedObjectContext];
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"UserInfoData" inManagedObjectContext:context];
@@ -76,7 +76,7 @@
 #pragma mark Device saving
 
 - (void)saveDevice:(Device* _Nonnull)device {
-    NSManagedObjectContext* context = [[(AppDelegate*)([[UIApplication sharedApplication] delegate]) persistentContainer] viewContext];
+    NSManagedObjectContext* context = [(AppDelegate*)([[UIApplication sharedApplication] delegate]) managedObjectContext];
     
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"DeviceData" inManagedObjectContext:context];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -97,7 +97,7 @@
 }
 
 - (NSArray* _Nonnull)getDevices {
-    NSManagedObjectContext* context = [[(AppDelegate*)([[UIApplication sharedApplication] delegate]) persistentContainer] viewContext];
+    NSManagedObjectContext* context = [(AppDelegate*)([[UIApplication sharedApplication] delegate]) managedObjectContext];
         
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"DeviceData" inManagedObjectContext:context];
