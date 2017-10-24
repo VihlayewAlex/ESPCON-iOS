@@ -73,12 +73,24 @@
 
 #pragma mark Actions
 
+NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+-(NSString *)randomStringWithLength:(int)len {
+    NSMutableString *randomString = [NSMutableString stringWithCapacity: len];
+    
+    for (int i=0; i<len; i++) {
+        [randomString appendFormat: @"%C", [letters characterAtIndex: arc4random_uniform([letters length])]];
+    }
+    
+    return randomString;
+}
+
 - (IBAction)getDeviceID:(UIButton *)sender {
         NSString* SSID = [_ssidNameField text];
         NSString* password = [_passwordField text];
         NSString* userID = [[[LocalDatabaseService shared] getUserInfo] userID];
         NSString* name = [_deviceNameField text];
-        NSString* UUID = @"SOME_UUID"; // Device identifier
+        NSString* UUID = [self randomStringWithLength:10]; // Device identifier
         
         if (!(SSID && password && userID && name && UUID)) {
             NSLog(@"Need more data");

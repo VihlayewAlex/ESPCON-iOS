@@ -147,7 +147,7 @@
 
 - (void)addNewDevice:(Device* _Nonnull)device withCompletionHandler:(void(^_Nonnull)(NSError * _Nullable error, NSString * _Nullable status, NSString * _Nullable message, NSInteger deviceID))handler {
     NSURL* url = [[NSURL alloc] initWithString:@"http://gold2star.kjbsoft.com/espcon/get_newDevId.php"];
-    NSString* parameters = [[[[[[[[[@"user_id=" stringByAppendingString:[device userID]] stringByAppendingString:@"&device_name="] stringByAppendingString:[device name]] stringByAppendingString:@"&ssid="] stringByAppendingString:[device SSID]] stringByAppendingString:@"&password="] stringByAppendingString:[device password]] stringByAppendingString:@"&mac_address="] stringByAppendingString:[device MACaddress]];
+    NSString* parameters = [[[[[[[[[@"user_id=" stringByAppendingString:[device userID]] stringByAppendingString:@"&device_name="] stringByAppendingString:[device name]] stringByAppendingString:@"&ssid="] stringByAppendingString:@"ESP32DEV"] stringByAppendingString:@"&password="] stringByAppendingString:@"12345678"] stringByAppendingString:@"&mac_address="] stringByAppendingString:[device MACaddress]];
     NSData* body = [parameters dataUsingEncoding:NSASCIIStringEncoding];
     
     NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:url];

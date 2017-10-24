@@ -40,10 +40,12 @@
     [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];
     [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
         [[NetworkingService shared] deleteDevice:_device withCompletionHandler:^(NSError * _Nullable error, NSString * _Nullable status, NSString * _Nullable message) {
-            // TODO: Handle deletion errors
-            NSLog(@"%@", status);
-            NSLog(@"%@", message);
-            [_delegate didDeleteDevice:_device];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                // TODO: Handle deletion errors
+                NSLog(@"%@", status);
+                NSLog(@"%@", message);
+                [_delegate didDeleteDevice:_device];
+            });
         }];
     }]];
     [(UIViewController*)_delegate presentViewController:alert animated:YES completion:nil];
