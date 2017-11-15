@@ -26,7 +26,7 @@
 
 @end
 
-static NSString* SERVER_ID = @"kdxb.000webhostapp.com";
+static NSString* SERVER_ID = @"gold2star.kjbsoft.com";
 
 @implementation AddDeviceViewController
 
